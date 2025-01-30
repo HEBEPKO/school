@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Список студентов</h1>
+<h1>Студент <span th:text="${student.getName()}"></span></h1>
 <table>
     <thead>
     <tr>
@@ -15,9 +15,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="person : ${person}">
-        <td th:text="${person.getId()}" ></td>
-        <td ><a th:href="@{/greeting/{id}(id=${person.getId()})}" th:text="${person.getName()}"></a></td>
+    <tr>
+        <td th:text="${student.getId()}">
+
+        </td>
+        <td th:text="${student.getName()}"></td>
     </tr>
     </tbody>
 </table>
