@@ -15,9 +15,12 @@
     </tr>
     </thead>
     <tbody>
+    <!--/*@thymesVar id="person" type="java"*/-->
     <tr th:each="person : ${person}">
+        <!--/*@thymesVar id="getId" type="java"*/-->
         <td th:text="${person.getId()}" ></td>
-        <td ><a th:href="@{/greeting/{id}(id=${person.getId()})}" th:text="${person.getName()}"></a></td>
+        <td ><!--/*@thymesVar id="getId" type="java"*/-->
+        <a th:href="@{/greeting/{id}(id=${person.getId()})}" th:text="${person.getName()}"></a></td>
     </tr>
     </tbody>
 </table>

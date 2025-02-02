@@ -1,31 +1,25 @@
 package com.example.school.model;
 
-//@Entity
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
 public class Student {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
+    private String surname;
 
-    public Student(String name,int id) {
-        this.name = name;
-        this.id = id;
+    public Student() {
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Student(String name) {
         this.name = name;
     }
 }
