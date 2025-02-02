@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Список студентов</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-th-each="student : ${student}">
+        <td data-th-text="${student.getId()}" ></td>
+        <td>
+            <a data-th-href="@{/student/{id}(id=${student.id})}"
+               data-th-text="${student.getName} + ' ' + ${student.getSurname()}"
+            >
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

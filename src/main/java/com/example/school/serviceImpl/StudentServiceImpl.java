@@ -15,16 +15,21 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     public StudentServiceImpl(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
-    };
+    }
 
     @Override
-    public Iterable<Student> getAllStudents() {
-        return studentRepository.findAll();
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll().stream().toList();
     }
 
     @Override
     public List<Student> getStudentById(Long id) {
         return studentRepository.findById(id).stream().toList();
+    }
+
+    @Override
+    public Student SaveStudent(Student student) {
+        return studentRepository.save(student);
     }
 
 

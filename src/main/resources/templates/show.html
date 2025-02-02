@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<h1>Студент <span th:text="${student.getName()}"></span></h1>
+<h1>Студент <span data-th-text="${student.getName()}"></span></h1>
+<a class="type-name-label" data-th-href="@{/students}">Вернутьсяк списку</a>
 <table>
     <thead>
     <tr>
@@ -16,10 +17,10 @@
     </thead>
     <tbody>
     <tr>
-        <td th:text="${student.getId()}">
+        <td data-th-text="${student.getId()}">
 
         </td>
-        <td th:text="${student.getName()}"></td>
+        <td data-th-text="${student.getName()}"></td>
     </tr>
     </tbody>
 </table>

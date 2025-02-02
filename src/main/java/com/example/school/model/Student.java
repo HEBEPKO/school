@@ -2,12 +2,12 @@ package com.example.school.model;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Getter
-@Setter
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,10 +16,4 @@ public class Student {
     private String name;
     private String surname;
 
-    public Student() {
-    }
-
-    public Student(String name) {
-        this.name = name;
-    }
 }
