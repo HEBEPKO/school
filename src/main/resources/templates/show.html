@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Студент <span th:text="${student.getName()}"></span></h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${student.getId()}">
+
+        </td>
+        <td th:text="${student.getName()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

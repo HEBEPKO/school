@@ -5,6 +5,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="|Hello, ${name}!|" />
+
+<h1>Список студентов</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--/*@thymesVar id="person" type="java"*/-->
+    <tr th:each="person : ${person}">
+        <!--/*@thymesVar id="getId" type="java"*/-->
+        <td th:text="${person.getId()}" ></td>
+        <td ><!--/*@thymesVar id="getId" type="java"*/-->
+        <a th:href="@{/greeting/{id}(id=${person.getId()})}" th:text="${person.getName()}"></a></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
