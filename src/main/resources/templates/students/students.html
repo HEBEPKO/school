@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Список студентов</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>ФИО</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-th-each="student : ${students}">
+        <td data-th-text="${student.id}" ></td>
+        <td>
+            <form data-th-action="@{'/person/' + ${student.id} + '/delete'}" method="post">
+                <a data-th-href="@{'/person/' + ${student.id}}" data-th-text="|${student.firstName} ${student.middleName} ${student.lastName}|">
+                    Students
+                </a>
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a data-th-href="@{person/created}">Создать ученика</a>
+</body>
+</html>
