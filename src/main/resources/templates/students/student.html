@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Студент <span data-th-text="|${student.firstName} ${student.lastName}|"></span></h1>
+<form data-th-action="@{/person/{studentId}/update(studentId=${student.id})}" method="post" data-th-object="${student}" style="display: flex; flex-direction: column; width: 35%">
+    <label for="firstname"> First Name:
+        <input id="firstname" type="text" name="firstName" data-th-value="*{firstName}">
+    </label>
+    <label for="lastname"> Last Name:
+        <input id="lastname" type="text" name="lastName" data-th-value="*{lastName}">
+    </label>
+    <label for="middlename"> Middle Name:
+        <input id="middlename" type="text" name="middleName" data-th-value="*{middleName}">
+    </label>
+    <label for="classlevel"> Class level:
+        <input id="classlevel" type="text" name="classLevel" data-th-value="*{classLevel}">
+    </label>
+    <button type="submit">Update</button>
+</form>
+<a class="type-name-label" data-th-href="@{/person}"><- Вернутьсяк списку</a>
+
+</body>
+</html>
